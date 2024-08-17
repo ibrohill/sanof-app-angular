@@ -1,0 +1,78 @@
+.voyage-section {
+  margin-top: 50px;
+}
+
+.voyage-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.voyage-item {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.voyage-info {
+  flex-grow: 1;
+}
+
+.voyage-title {
+  font-size: 1.25rem;
+  color: #007bff;
+  margin: 0 0 10px 0;
+}
+
+.separator {
+  margin: 0 10px;
+  font-weight: bold;
+  color: #6c757d;
+}
+
+.voyage-details {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.detail-label {
+  font-weight: bold;
+}
+
+.reserve-container {
+  display: flex;
+  align-items: center;
+}
+
+.number-input {
+  width: 100px;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+}
+
+.reserve-button {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reserve-button:hover {
+  background-color: #218838;
+}
+
+.no-voyages {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #6c757d;
+}

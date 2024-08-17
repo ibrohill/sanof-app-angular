@@ -1,0 +1,59 @@
+<div class="container">
+  <h2>Réservation</h2>
+
+  <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="voyageur_id">Voyageur ID:</label>
+      <input id="voyageur_id" formControlName="voyageur_id" class="form-control" type="number" />
+    </div>
+
+    <div class="form-group">
+      <label for="dateReservation">Date de Réservation:</label>
+      <input id="dateReservation" formControlName="dateReservation" class="form-control" type="date" />
+    </div>
+
+    <div class="form-group">
+      <label for="statut">Statut:</label>
+      <input id="statut" formControlName="statut" class="form-control" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="montantTotal">Montant Total:</label>
+      <input id="montantTotal" formControlName="montantTotal" class="form-control" type="number" step="0.01" />
+    </div>
+
+    <h3>Paiement</h3>
+
+    <div class="form-group">
+      <label for="paymentMethod">Méthode de Paiement:</label>
+      <select id="paymentMethod" formControlName="paymentMethod" class="form-control">
+        <option value="carte">Carte de Crédit</option>
+        <option value="paypal">PayPal</option>
+        <!-- Ajoutez d'autres méthodes de paiement si nécessaire -->
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="cardNumber">Numéro de Carte:</label>
+      <input id="cardNumber" formControlName="cardNumber" class="form-control" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="expiryDate">Date d'Expiration:</label>
+      <input id="expiryDate" formControlName="expiryDate" class="form-control" type="text" placeholder="MM/AA" />
+    </div>
+
+    <div class="form-group">
+      <label for="cvv">CVV:</label>
+      <input id="cvv" formControlName="cvv" class="form-control" type="text" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Réserver</button>
+  </form>
+</div>
+
+
+
+
+
+

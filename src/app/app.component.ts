@@ -1,10 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { VoyagesService } from './services/voyages.service';
+import { Voyage } from './models/voyage.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'sonef-app-angular';
+export class AppComponent implements OnInit {
+  voyages: Voyage[] = [];
+
+  constructor(private voyagesService: VoyagesService) {}
+
+  ngOnInit(): void {
+    const searchParams = {
+      depart: 'Bamako',  // Exemple de valeurs par défaut
+      arrivee: 'Sikasso',
+      date: '2024-08-20',
+      nombre_de_personnes: 50
+    };
+
+    // Vérifiez que tous les champs sont définis
+    if (searchParams.depart && searchParams.arrivee && searchParams.date && searchParams.nombre_de_personnes) {
+      this.voyagesService.rechercherVoyages(searchParams).subscribe(data => {
+        this.voyages = data;
+      }, error => {
+        console.error('Erreur lors de la recherche des voyages : ', error);
+      });
+    } else {
+      console.error('Certains paramètres de recherche ne sont pas définis.');
+    }
+  }
 }

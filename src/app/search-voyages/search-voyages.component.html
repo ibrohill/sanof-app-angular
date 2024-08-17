@@ -1,0 +1,56 @@
+<div class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="intro-wrap">
+          <h1 class="mb-5"><span class="d-block">Avec Sonef</span> Voyager au <span class="typed-words"></span></h1>
+          <div class="row">
+            <div class="col-35">
+              <form [formGroup]="searchForm" (ngSubmit)="onSearch()" class="travel-booking-form">
+                <div class="row mb-8">
+                  <div class="col-sm-8 col-md-4 mb-3 mb-lg-0 col-lg-4">
+                    <label for="depart" class="sr-only">Départ</label>
+                    <select id="depart" formControlName="depart" class="form-control">
+                      <option value="" disabled selected>Ville de départ</option>
+                      <option *ngFor="let city of cities" [value]="city.name">{{ city.name }}</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-8 col-md-4 mb-3 mb-lg-0 col-lg-4">
+                    <label for="arrivee" class="sr-only">Arrivée</label>
+                    <select id="arrivee" formControlName="arrivee" class="form-control">
+                      <option value="" disabled selected>Ville d'arrivée</option>
+                      <option *ngFor="let city of cities" [value]="city.name">{{ city.name }}</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-8 col-md-4 mb-3 mb-lg-0 col-lg-4">
+                    <label for="date" class="sr-only">Date</label>
+                    <input id="date" formControlName="date" type="date" class="form-control">
+                  </div>
+                </div>
+                <br>
+                <div class="row align-items-center">
+                  <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+                    <button type="submit" class="btn btn-primary btn-block">Rechercher</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="slides">
+          <img src="assets/images/travel.jpg" alt="Image" class="img-fluid active">
+          <img src="assets/images/2a594e2795222e450f204969dc90143f.jpg" alt="Image" class="img-fluid">
+          <img src="assets/images/6861ec10a13a0232f97786b009ed54dd.jpg" alt="Image" class="img-fluid">
+          <img src="assets/images/1e488d630af65cc0a6461ad687c60040.jpg" alt="Image" class="img-fluid">
+          <img src="assets/images/114e6819e4f3013aea304a4e5389ea2c.jpg" alt="Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

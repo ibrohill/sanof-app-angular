@@ -1,0 +1,23 @@
+<br><br><br><br><br><br><br><br><br>
+
+
+<div class="voyage-section">
+  <div *ngIf="voyages.length > 0" class="voyage-list">
+    <ul>
+      <li *ngFor="let voyage of voyages" class="voyage-item">
+        <div class="voyage-info">
+          <h3 class="voyage-title">{{ voyage.depart }} <span class="separator">→</span> {{ voyage.arrivee }}</h3>
+          <p class="voyage-details">
+            <span class="detail-label">Date:</span> {{ voyage.date }} |
+            <span class="detail-label">Heure:</span> {{ voyage.heure }}
+          </p>
+        </div>
+        <button class="reserve-button" (click)="reserver(voyage.id)">Réserver</button>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="voyages.length === 0" class="no-voyages">
+    <p>Aucun voyage trouvé pour les critères de recherche spécifiés.</p>
+  </div>
+</div>
+
